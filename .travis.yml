@@ -1,3 +1,5 @@
+addons:
+  firefox: "50.0.1"
 before_script:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
   - mkdir geckodriver
