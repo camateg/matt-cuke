@@ -3,6 +3,7 @@ Given(/^We navigate to Google Images$/) do
 end
 
 When(/^We search for the word robot$/) do
+  sleep 2
   $d.find_element(:id, 'lst-ib').send_keys('robots')
   $d.find_element(:id, 'lst-ib').send_keys(:enter)
 end
