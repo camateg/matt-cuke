@@ -1,7 +1,3 @@
-require 'selenium-webdriver'
-
-$d = Selenium::WebDriver.for :chrome
-
 Given(/^We navigate to Google Images$/) do
   $d.navigate.to "http://images.google.com/"
 end

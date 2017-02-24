@@ -1,3 +1,3 @@
 require 'selenium-webdriver'
 
-@d = Selenium::WebDriver.for :phantomjs
+$d = Selenium::WebDriver.for :chrome
