@@ -1,7 +1,7 @@
 before_script:
   - sudo apt-get update
   - sudo apt-get install chromium-browser
-  - wget https://npm.taobao.org/mirrors/chromedriver/2.24/chromedriver_linux64.zip
+  - wget https://npm.taobao.org/mirrors/chromedriver/2.10/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - export PATH=$PATH:$PWD
   - "export DISPLAY=:99.0"
