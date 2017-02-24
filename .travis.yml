@@ -1,13 +1,19 @@
 addons:
   firefox: "50.0.1"
 before_script:
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
-  - mkdir geckodriver
-  - tar -xzf geckodriver-v0.14.0-linux64.tar.gz -C geckodriver
-  - export PATH=$PATH:$PWD/geckodriver
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable
+  - version=`curl -silent https://chromedriver.storage.googleapis.com/LATEST_RELEASE`
+  - file='chromedriver_linux64.zip'
+  - wget https://chromedriver.storage.googleapis.com/${version}/${file}
+  - export PATH=$PATH:$PWD
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
+
+sudo: required
 
 language: ruby
 rvm:
